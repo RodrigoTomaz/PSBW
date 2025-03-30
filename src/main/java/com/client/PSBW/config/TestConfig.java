@@ -7,8 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
-import com.client.PSBW.Repositories.UserRepository;
-import com.client.PSBW.entity.User;
+import com.client.PSBW.entities.User;
+import com.client.PSBW.repositories.UserRepository;
 
 @Configuration
 @Profile("test")

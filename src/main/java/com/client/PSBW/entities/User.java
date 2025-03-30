@@ -1,4 +1,4 @@
-package com.client.PSBW.entity;
+package com.client.PSBW.entities;
 
 import java.io.Serializable;
 import java.util.Objects;
