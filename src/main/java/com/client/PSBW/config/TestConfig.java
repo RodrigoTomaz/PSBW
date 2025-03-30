@@ -8,8 +8,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+import com.client.PSBW.entities.Category;
 import com.client.PSBW.entities.Order;
 import com.client.PSBW.entities.User;
+import com.client.PSBW.repositories.CategoryRepository;
 import com.client.PSBW.repositories.OrderRepository;
 import com.client.PSBW.repositories.UserRepository;
 
@@ -22,6 +24,9 @@ public class TestConfig implements CommandLineRunner{
 	
 	@Autowired 
 	private OrderRepository orderRepository;
+	
+	@Autowired
+	private CategoryRepository categoryRepository;
 
 	@Override
 	public void run(String... args) throws Exception {
@@ -32,9 +37,13 @@ public class TestConfig implements CommandLineRunner{
 		Order o2 = new Order(null, Instant.parse("2025-11-22T19:30:53Z"), u2);
 		Order o3 = new Order(null, Instant.parse("2022-02-19T23:15:53Z"), u1);
 		
+		Category cat1 = new Category(null, "Eletronics");
+		Category cat2 = new Category(null, "Books");
+		Category cat3 = new Category(null, "Computers");
 		
 		userRepository.saveAll(Arrays.asList(u1, u2));
 		orderRepository.saveAll(Arrays.asList(o1, o2, o3));
+		categoryRepository.saveAll(Arrays.asList(cat1, cat2, cat3));
 	}
 	
 	
